@@ -1,19 +1,19 @@
 import axios, { Axios } from "axios";
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import SectionHeader from "../SectionHeader";
 import Ratings from "./Ratings";
 
 const RatingReview = ({ match }) => {
- 
+
     // var Lid = "Hiii";
     var LoggedInUser = "";
-    
+
     // FETCHING REVIEWS
     const [fetchReview, setFetchReview] = useState([]);
-    
+
     const doctorId = useParams();
-    
+
     // FETCHING DOCTOR DATA WITH THE HELP OF ID
     const [doctor, setDoctor] = useState([]);
 
@@ -49,7 +49,7 @@ const RatingReview = ({ match }) => {
 
     var Lid = doctor._id;
     var Lname = doctor.name;
-    
+
     // ADDING REVIEWS
     const [reviews, setReviews] = useState({
         pname: "",
@@ -63,14 +63,14 @@ const RatingReview = ({ match }) => {
 
     const getDoctorDetailsById = async () => {
         try {
-                // console.log(doctorId);
-                const res = await fetch(`http://localhost:5000/doctorSearch/${doctorId.doctorId}`, {
+            // console.log(doctorId);
+            const res = await fetch(`http://localhost:5000/doctorSearch/${doctorId.doctorId}`, {
                 method: "GET",
-                headers: { 
-                    "Content-Type": "application/json" 
+                headers: {
+                    "Content-Type": "application/json"
                 },
             });
-            
+
             const getDoctorDetails = await res.json();
             // console.log(getDoctorDetails);
             setDoctor(getDoctorDetails);
@@ -99,7 +99,7 @@ const RatingReview = ({ match }) => {
     const addReviewHandler = async (e) => {
         e.preventDefault();
 
-        const {pname, doctorsId, name, rating, comment } =  reviews;
+        const { pname, doctorsId, name, rating, comment } = reviews;
 
         const res = await fetch("/doctorSearch/reviews", {
             method: "POST",
@@ -132,31 +132,31 @@ const RatingReview = ({ match }) => {
     const getDoctorReview = async () => {
         try {
             const res = await fetch("http://localhost:5000/getDoctorReview", {
-            method: "GET",
-            headers: { "Content-Type": "application/json" },
-        });
-        const getReviews = await res.json();
-        console.log(getReviews);
-        setFetchReview(getReviews);
+                method: "GET",
+                headers: { "Content-Type": "application/json" },
+            });
+            const getReviews = await res.json();
+            console.log(getReviews);
+            setFetchReview(getReviews);
 
-      if (!res.status === 200) {
-        const error = new Error(res.error);
-        throw error;
-      }
-    } catch (err) {
-      console.log(err);
-    }
-  };
+            if (!res.status === 200) {
+                const error = new Error(res.error);
+                throw error;
+            }
+        } catch (err) {
+            console.log(err);
+        }
+    };
 
-    
-    
+
+
     useEffect(() => {
-        getDoctorDetailsById();   
-        getDoctorReview(); 
+        getDoctorDetailsById();
+        getDoctorReview();
         patientLoggedIn();
     }, []);
-    
-        
+
+
 
     return (
         <>
@@ -168,14 +168,14 @@ const RatingReview = ({ match }) => {
                                 <SectionHeader title="Rate Doctor" />
                                 <div className="rating-review-wrapper m-4">
                                     <form method="GET">
-                                        <div class="mb-3">
+                                        {/* <div class="mb-3">
                                             <label for="InputName" class="form-label">Doctor Name</label>
                                             <input disabled type="text" class="form-control" name="" id="InputName" value={doctor.name}/>
                                         </div>
                                         <div class="mb-3">
                                             <label for="InputID" class="form-label">Doctor Id</label>
                                             <input disabled type="text" class="form-control" name="" id="InputID" value={doctor._id} />
-                                        </div>
+                                        </div> */}
                                         <div class="mb-3">
                                             <label for="InputDesignation" class="form-label">Doctor Designation</label>
                                             <input disabled type="text" class="form-control" name="" id="InputDesignation" value={doctor.designation} />
@@ -187,31 +187,34 @@ const RatingReview = ({ match }) => {
                                     </form>
                                     <form action="">
                                         <div className="mb-3">
-                                            <select name="doctorsId" id="doctorsId" value={reviews.doctorsId} onChange={handleInputs} >
-                                                <option value="--select--">--select--</option>
+                                            <label for="InputLocation" class="form-label">Doctor ID</label>
+                                            <select name="doctorsId" id="doctorsId" value={reviews.doctorsId} onChange={handleInputs} class="form-control" >
+                                                <option value="--select--">-- Select ID --</option>
                                                 <option value={Lid}>{Lid}</option>
                                             </select>
                                         </div>
                                         <div className="mb-3">
-                                            <select name="name" id="name" value={reviews.name} onChange={handleInputs}>
-                                                <option value="--select--">--select--</option>
+                                            <label for="InputLocation" class="form-label">Doctor Name</label>
+                                            <select name="name" id="name" value={reviews.name} onChange={handleInputs} class="form-control">
+                                                <option value="--select--">-- Select Doctors --</option>
                                                 <option value={Lname}>{Lname}</option>
                                             </select>
                                         </div>
                                         <div className="mb-3">
-                                            <select name="pname" id="pname" value={reviews.pname} onChange={handleInputs}>
-                                                <option value="--select--">--select--</option>
+                                            <label for="InputLocation" class="form-label">Patient Name</label>
+                                            <select name="pname" id="pname" value={reviews.pname} onChange={handleInputs} class="form-control">
+                                                <option value="--select--">-- Select User Name --</option>
                                                 <option value={PatientName}>{PatientName}</option>
                                             </select>
                                         </div>
-                                       
+
                                         <div class="mb-3">
                                             <label for="InputRating" class="form-label">Rating</label>
-                                            <input type="number" class="form-control" id="rating" placeholder="eg: 3 " name="rating" value={reviews.rating} onChange={handleInputs}/>
+                                            <input type="number" class="form-control" id="rating" placeholder="eg: 3 " name="rating" value={reviews.rating} onChange={handleInputs} min="1" max="5" />
                                         </div>
                                         <div class="mb-3">
                                             <label for="InputLocation" class="form-label">Review</label>
-                                            <textarea type="text" class="form-control" name="comment" id="comment" value={reviews.comment} onChange= {handleInputs} />
+                                            <textarea type="text" class="form-control" name="comment" id="comment" value={reviews.comment} onChange={handleInputs} />
                                         </div>
                                         <button type="submit" class="btn btn-primary" id="rate" name="rate" onClick={addReviewHandler}>Add Review</button>
                                     </form>
@@ -223,19 +226,19 @@ const RatingReview = ({ match }) => {
                                             <hr />
                                             {
                                                 fetchReview.map((item, index) => {
-                                                    if(item.doctorsId == Lid) {
-                                                        return(
+                                                    if (item.doctorsId == Lid) {
+                                                        return (
                                                             <>
-                                                                
+
                                                                 <div className="review">
-                                                                <h4>{item.pname}</h4>
-                                                                <p>{item.name}</p>
-                                                                <Ratings value={item.rating} />
-                                                                <p> Review: {item.comment} </p>
+                                                                    <h4>{item.pname}</h4>
+                                                                    <p>{item.name}</p>
+                                                                    <Ratings value={item.rating} />
+                                                                    <p> Review: {item.comment} </p>
                                                                 </div>
                                                             </>
                                                         )
-                                                    } 
+                                                    }
                                                 })
                                             }
                                             <hr />
