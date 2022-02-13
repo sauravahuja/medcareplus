@@ -123,6 +123,8 @@ const PatientAppointment = () => {
                                                                                 </p>
                                                                                 <p className="location">Time: {item.time} </p>
                                                                                 <p className="location">Mode: {item.mode} </p>
+                                                                                <hr />
+                                                                                <a className="btn btn-primary w-100" href="https://medcareplus-video.netlify.app/" target="_blank">Video Call</a>
                                                                             </div>
                                                                         </>
                                                                     )
