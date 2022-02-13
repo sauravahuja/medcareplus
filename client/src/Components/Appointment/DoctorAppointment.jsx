@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import SectionHeader from '../SectionHeader';
 import { useHistory } from "react-router-dom";
 
@@ -15,23 +15,23 @@ const DoctorAppointment = () => {
     const doctorMiddleware = async () => {
         try {
             const res = await fetch("/getDoctorMiddleware", {
-              method: "GET",
-              headers: {
-                Accept: "application/json",
-                "Content-Type": "application/json",
-              },
-              credentials: "include",
+                method: "GET",
+                headers: {
+                    Accept: "application/json",
+                    "Content-Type": "application/json",
+                },
+                credentials: "include",
             });
-      
+
             const data = await res.json();
             // console.log("Doctor Logged In:",data);
             appointmentData = data;
             localStorage.setItem("doctorName", data.name);
             // console.log("Appointment Data new:",appointmentData);
-      
+
             if (!res.status === 200) {
-              const error = new Error(res.error);
-              throw error;
+                const error = new Error(res.error);
+                throw error;
             }
 
         } catch (error) {
@@ -64,6 +64,7 @@ const DoctorAppointment = () => {
         doctorMiddleware();
         getDoctorData();
     }, []);
+    var itemIndex =1;
 
     return (
         <>
@@ -82,10 +83,14 @@ const DoctorAppointment = () => {
                                                         {
                                                             appointment.map((item, index) => {
                                                                 {
-                                                                    console.log("Patient Name",item.pname);
+                                                                    console.log("Map data", item);
                                                                 }
-                                                                if(item.doctor == localStorage.getItem("doctorName")) {
-                                                                    return(
+                                                                if (item.doctor == localStorage.getItem("doctorName")) {
+                                                                    localStorage.setItem("prescriptionPatientName"+itemIndex, item.pname);
+                                                                    itemIndex = itemIndex + 1;
+                                                                    localStorage.setItem("prescriptionDoctorName", item.doctor);
+                                                                    var hrefLink = "/doctor/prescription/" + item.pname;
+                                                                    return ( 
                                                                         <>
                                                                             <div className="approval-card" key={index}>
                                                                                 <h4 className="patient-name mb-4">Doctor: {item.doctor}</h4>
@@ -100,7 +105,7 @@ const DoctorAppointment = () => {
                                                                                 <p className="location">Mode: {item.mode} </p>
                                                                                 <hr />
                                                                                 <a className="btn btn-success" href="https://medcareplus-video.netlify.app/" target="_blank">Video Call</a>
-                                                                                <a className="btn btn-primary mx-2" href="/doctor/prescription" target="_blank">Give Prescription</a>
+                                                                                <a className="btn btn-primary mx-2" href={hrefLink}>Give Prescription</a>
                                                                             </div>
                                                                         </>
                                                                     )

@@ -371,6 +371,16 @@ router.get('/getDoctorAppointment', async (req, res) => {
     }
 });
 
+// FETCHING PATIENT DATA WITH NAME
+router.get('/getPatientData', async (req, res) => {
+    try {
+       const patientDetails = await Patient.find();
+       return res.json(patientDetails);
+    } catch(err) {
+       return res.json(err);
+    }
+});
+
 // // FETCHING RATING FEATURE FROM DB
 // router.get('/getRatings', async (req, res) => {
 //     try {

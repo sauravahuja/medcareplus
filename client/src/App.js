@@ -24,6 +24,7 @@ import PharmacyAddress from './Components/Pharmacy/PharmacyAddress';
 import RatingReview from './Components/DoctorSearch/RatingReview';
 
 import { reducer, initialState } from "./Components/reducer/UseReducer";
+import Prescription from './Components/Appointment/Prescription';
 
 
 //context API
@@ -57,6 +58,7 @@ const Routing = () => {
         <Route exact path="/pharmacy" component={Pharmacy}></Route>
         <Route exact path="/doctorsearch/:doctorId" component={RatingReview}></Route>
         <Route exact path="/pharmacy/checkout" component={PharmacyAddress}></Route>
+        <Route exact path="/doctor/prescription/:patientname" component={Prescription}></Route>
       </Switch>
   )
 }
