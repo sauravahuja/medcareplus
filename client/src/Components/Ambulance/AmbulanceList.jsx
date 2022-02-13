@@ -23,37 +23,37 @@ const AmbulanceList = () => {
                                         <tr>
                                             <th scope="row">1</th>
                                             <td>Shantabai Hospital</td>
-                                            <td>+91 8967540987</td>
+                                            <td><a style={{color: "#111"}} href="tel:8452083830">+91 8452083830</a></td>
                                         </tr>
                                         <tr>
                                             <th scope="row">2</th>
                                             <td>Hira Mongi Hospital</td>
-                                            <td>+91 8978655489</td>
+                                            <td><a style={{color: "#111"}} href="tel:8967540987">+91 8967540987</a></td>
                                         </tr>
                                         <tr>
                                             <th scope="row">3</th>
                                             <td>Ashirwaad Hospital</td>
-                                            <td>+91 8965785498</td>
+                                            <td><a style={{color: "#111"}} href="tel:8967540987">+91 8967540987</a></td>
                                         </tr>
                                         <tr>
                                             <th scope="row">4</th>
                                             <td>Hira Mongi Hospital</td>
-                                            <td>+91 8978655489</td>
+                                            <td><a style={{color: "#111"}} href="tel:8967540987">+91 8967540987</a></td>
                                         </tr>
                                         <tr>
                                             <th scope="row">5</th>
                                             <td>Ashirwaad Hospital</td>
-                                            <td>+91 8965785498</td>
+                                            <td><a style={{color: "#111"}} href="tel:8967540987">+91 8967540987</a></td>
                                         </tr>
                                         <tr>
                                             <th scope="row">6</th>
                                             <td>Hira Mongi Hospital</td>
-                                            <td>+91 8978655489</td>
+                                            <td><a style={{color: "#111"}} href="tel:8967540987">+91 8967540987</a></td>
                                         </tr>
                                         <tr>
                                             <th scope="row">7</th>
                                             <td>Ashirwaad Hospital</td>
-                                            <td>+91 8965785498</td>
+                                            <td><a style={{color: "#111"}} href="tel:8967540987">+91 8967540987</a></td>
                                         </tr>
                                     </tbody>
                                 </table>
