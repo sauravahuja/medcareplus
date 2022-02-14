@@ -1,4 +1,4 @@
-import React, {useState, useContext} from "react";
+import React, { useState, useContext } from "react";
 import { NavLink, useHistory } from "react-router-dom";
 import LoginImg from "../LoginRegistration/LoginImg";
 import SectionHeader from "../SectionHeader";
@@ -7,7 +7,7 @@ import { UserContext } from "../../App"
 
 const DoctorLogin = () => {
 
-    const {state, dispatch} = useContext(UserContext);
+    const { state, dispatch } = useContext(UserContext);
 
     const history = useHistory();
 
@@ -23,19 +23,21 @@ const DoctorLogin = () => {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                email, 
+                email,
                 password
             })
         });
 
         const data = res.json();
 
-        if(res.status === 400 || !data) {
+        if (res.status === 400 || !data) {
             window.alert("Invalid Credentials");
             console.log("Invalid Credentials");
         } else {
-            dispatch({type:"USER", payload:true})
-
+            dispatch({ type: "USER", payload: true })
+            
+            localStorage.setItem("currentdoctorloggedin", email);
+            console.log(localStorage.getItem("currentdoctorloggedin"));
             window.alert("Login Successful");
             console.log("Login Successful");
 
@@ -60,12 +62,12 @@ const DoctorLogin = () => {
                                             <div class="mb-3">
                                                 <label for="" class="form-label">Email Address</label>
                                                 <input type="email" class="form-control" name="email" id="email" value={email}
-                                                onChange={(e) => setEmail(e.target.value)} placeholder="Example: amitjanna@gmail.com" />
+                                                    onChange={(e) => setEmail(e.target.value)} placeholder="Example: amitjanna@gmail.com" />
                                             </div>
                                             <div class="mb-3">
                                                 <label for="" class="form-label">Password</label>
                                                 <input type="password" class="form-control" name="password" id="password" value={password}
-                                                onChange={(e) => setPassword(e.target.value)} />
+                                                    onChange={(e) => setPassword(e.target.value)} />
                                             </div>
                                             <button type="submit" class="btn btn-primary w-100" onClick={loginUser}>Login</button>
                                         </form>

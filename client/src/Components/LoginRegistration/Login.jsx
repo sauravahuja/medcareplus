@@ -35,7 +35,7 @@ const Login = () => {
             console.log("Invalid Credentials");
         } else {
             dispatch({type:"USER", payload:true})
-
+            localStorage.setItem("currentpatientloggedin", email);
             window.alert("Login Successful");
             console.log("Login Successful");
 

@@ -8,8 +8,72 @@ import { UserContext } from '../../App';
 import facebook from '../../Assets/Images/icons/facebook.png';
 import instagram from '../../Assets/Images/icons/instagram.png';
 import github from '../../Assets/Images/icons/github.png';
+import { useEffect } from "react";
 
 const Navbar = () => {
+
+    var LoggedInUser = "";
+    var data;
+    // CURRENT PATIENT/USER WHICH IS LOGGED IN
+    const patientLoggedIn = async () => {
+        var PatientEmail = localStorage.getItem("currentpatientloggedin");
+        try {
+            const res = await fetch('/getPatientData', {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+            });
+
+            data = await res.json();
+            data.map((item, index) => {
+                console.log(PatientEmail);
+                if (PatientEmail == item.email) {
+                    LoggedInUser = item.name;
+                    localStorage.setItem("cuser", LoggedInUser);
+                }
+            })
+            console.log("PatientEmail:", PatientEmail);
+
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+
+    // FETCHING CURRENT DOCTOR LOGGED IN
+    var getDoctors;
+    var currentdoctorloggedin;
+    const getData = async () => {
+        var DoctorEmail = localStorage.getItem("currentdoctorloggedin");
+        try {
+            const res = await fetch("http://localhost:5000/getData", {
+                method: "GET",
+                headers: { "Content-Type": "application/json" },
+            });
+            getDoctors = await res.json();
+            console.log("Doctors are:", getDoctors);
+
+            console.log(DoctorEmail);
+
+            getDoctors.map((item, index) => {
+                if (DoctorEmail == item.email) {
+                    currentdoctorloggedin = item.name;
+                    console.log(currentdoctorloggedin);
+                    localStorage.setItem("cuser", currentdoctorloggedin);
+                }
+            })
+
+
+        } catch (err) {
+            console.log(err);
+        }
+    };
+
+    useEffect(() => {
+        patientLoggedIn();
+        getData();
+    }, []);
 
     const { state, dispatch } = useContext(UserContext);
     const RenderMenu = () => {
@@ -75,18 +139,19 @@ const Navbar = () => {
         }
     }
 
-    var patientName = localStorage.getItem('patientname');
 
     return (
 
         <>
             <section id="top-nav">
-                <div className="d-flex flex-row-reverse">
-                    <img src={facebook} alt="Facebook Logo" height="27px" style={{padding:"0 4px"}} />
-                    <img src={instagram} alt="Instagram Logo" height="27px" style={{padding:"0 4px"}} />
-                    <img src={github} alt="Github Logo" height="27px" style={{padding:"0 4px"}} />
+                <div className="d-flex" style={{ "justify-content": "space-between" }}>
+                    <div className="d-flex flex-row-reverse">
+                        <img src={facebook} alt="Facebook Logo" height="27px" style={{ padding: "0 4px" }} />
+                        <img src={instagram} alt="Instagram Logo" height="27px" style={{ padding: "0 4px" }} />
+                        <img src={github} alt="Github Logo" height="27px" style={{ padding: "0 4px" }} />
+                    </div>
+                    <h6 style={{ "padding-right": "50px", "padding-top": "5px" }}>Greetings, {localStorage.getItem("cuser")}</h6>
                 </div>
-                <p>{patientName}</p>
             </section>
 
             <nav id="navbar-c" className="navbar navbar-expand-lg navbar-light bg-light c-navbar py-4">
