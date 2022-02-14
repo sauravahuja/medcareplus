@@ -128,7 +128,7 @@ const AdminApproval = () => {
                                                             approvalDoctors.map((item, index) => (
                                                                 <div className="approval-card" key={index} id={"card" + item.approved}>
                                                                     <h4 className="doctor-name mb-4">Dr. {item.name} </h4>
-                                                                    <p className="id">{item._id}</p>
+                                                                    {/* <p className="id">{item._id}</p> */}
                                                                     <p className="approved" hidden>{item.approved}</p>
                                                                     <p className="experience">
                                                                         Years of Experience: {item.experience}

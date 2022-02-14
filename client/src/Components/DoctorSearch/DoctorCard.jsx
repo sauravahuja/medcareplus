@@ -177,8 +177,24 @@ const DoctorCard = ({ search }) => {
 
   let date = new Date();
   let today = date.toDateString();
+
   date.setDate(date.getDate() + 1);
   let tomorrow = date.toDateString();
+
+  date.setDate(date.getDate() + 1);
+  let tomorrowplus1 = date.toDateString();
+
+  date.setDate(date.getDate() + 1);
+  let tomorrowplus2 = date.toDateString();
+
+  date.setDate(date.getDate() + 1);
+  let tomorrowplus3 = date.toDateString();
+
+  date.setDate(date.getDate() + 1);
+  let tomorrowplus4 = date.toDateString();
+
+  date.setDate(date.getDate() + 1);
+  let tomorrowplus5 = date.toDateString();
 
   return (
     <>
@@ -191,9 +207,9 @@ const DoctorCard = ({ search }) => {
                   <div className="doc-image">
                     <img src={harshpatel} alt="" />
                   </div>
-                  <div className="details px-5 my-auto">
+                  <div className="details px-5 my-auto pt-2">
                     <h4 className="doctor-name">{item.name}</h4>
-                    <p className="experience">ID: {item._id}</p>
+                    {/* <p className="experience">ID: {item._id}</p> */}
                     <p className="experience">
                       Years of Experience: {item.experience}
                     </p>
@@ -326,6 +342,11 @@ const DoctorCard = ({ search }) => {
                                   </option>
                                   <option value={today}>{today}</option>
                                   <option value={tomorrow}>{tomorrow}</option>
+                                  <option value={tomorrowplus1}>{tomorrowplus1}</option>
+                                  <option value={tomorrowplus1}>{tomorrowplus2}</option>
+                                  <option value={tomorrowplus1}>{tomorrowplus3}</option>
+                                  <option value={tomorrowplus1}>{tomorrowplus4}</option>
+                                  <option value={tomorrowplus1}>{tomorrowplus5}</option>
                                 </select>
                               </div>
 

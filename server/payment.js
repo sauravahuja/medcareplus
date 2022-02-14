@@ -15,7 +15,7 @@ const router = express.Router();
 router.post("/orders", async (req, res) => {
     try {
         const options = {
-            amount: 10000, // amount in smallest currency unit
+            amount: 11000, // amount in smallest currency unit
             currency: "INR",
             receipt: "receipt_order_74394",
         };

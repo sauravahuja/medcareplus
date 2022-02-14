@@ -22,7 +22,7 @@ const LatestNews = () => {
                                         <LatestNewsCard title="Myth's around Covid" description="12 Vaccine Myth and facts that you should be aware of during the covid crisis. This is are lifesaver hacks." imgsrc={covidImg} author="Dr. Reshma Pandit" linkto="" />
                                     </div>
                                     <div className="col-md-6 col-xs-5 mx-auto">
-                                        <LatestNewsCard title="Step to Better Lifestyle" description="These are 3 life changing steps you need to take to ensure you have a better life style as well to entain a peaceful life" imgsrc={dietImg} author="Dr. Rahul Desai" linkto="" />
+                                        <LatestNewsCard title="Better Lifestyle" description="These are 3 life changing steps you need to take to ensure you have a better life style as well to entain life" imgsrc={dietImg} author="Dr. Rahul Desai" linkto="" />
                                     </div>
                                 </div>
                             </div>

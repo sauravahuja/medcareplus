@@ -108,7 +108,7 @@ const Prescription = () => {
                                     </div>
                                     <div className="mb-2">
                                         <label for="patientName" className="pb-2">Patient Name</label>
-                                        <input name="patientname" type="text" className="form-control" id="patientName" value={param.patientname}  />
+                                        <input name="patientname" type="text" className="form-control" id="patientName" value={param.patientname} />
                                     </div>
                                     {
                                         patientData.map((item, index) => {
@@ -117,7 +117,7 @@ const Prescription = () => {
                                                     <>
                                                         <div className="mb-2">
                                                             <label for="patientEmail" className="pb-2">Patient Email</label>
-                                                            <input name="patientemail" type="text" className="form-control" id="patientEmail" value={item.email} />
+                                                            <input name="patientemail" type="text" className="form-control" id="patientEmail" value={item.email}     />
                                                         </div>
                                                     </>
                                                 )
@@ -132,7 +132,7 @@ const Prescription = () => {
                                         <label for="patientPrescription" className="pb-2">Prescription</label>
                                         <textarea name="patientprescription" id="patientPrescription" className="form-control"/>
                                     </div>
-                                    <input id="prescription" type="submit" className="btn btn-primary w-100" value="submit"/>
+                                    <input id="prescription" type="submit" className="btn btn-primary w-100" value="Give Prescription"/>
                                 </form>
                             </div>
                         </div>

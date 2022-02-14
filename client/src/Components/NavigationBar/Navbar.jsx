@@ -65,7 +65,7 @@ const Navbar = () => {
                                 </a>
                                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <li><a className="dropdown-item" href="/admin/login">Admin Login</a></li>
-                                    <li><a className="dropdown-item" href="/admin/register"> Admin Register</a></li>
+                                    {/* <li><a className="dropdown-item" href="/admin/register"> Admin Register</a></li> */}
                                 </ul>
                             </li>
                         </ul>
@@ -74,6 +74,9 @@ const Navbar = () => {
             )
         }
     }
+
+    var patientName = localStorage.getItem('patientname');
+
     return (
 
         <>
@@ -83,6 +86,7 @@ const Navbar = () => {
                     <img src={instagram} alt="Instagram Logo" height="27px" style={{padding:"0 4px"}} />
                     <img src={github} alt="Github Logo" height="27px" style={{padding:"0 4px"}} />
                 </div>
+                <p>{patientName}</p>
             </section>
 
             <nav id="navbar-c" className="navbar navbar-expand-lg navbar-light bg-light c-navbar py-4">
