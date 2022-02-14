@@ -337,16 +337,16 @@ const DoctorCard = ({ search }) => {
                                   value={appointment.date}
                                   onChange={handleInputs}
                                 >
-                                  <option selected>
+                                  <option>
                                     Select the Date
                                   </option>
                                   <option value={today}>{today}</option>
                                   <option value={tomorrow}>{tomorrow}</option>
                                   <option value={tomorrowplus1}>{tomorrowplus1}</option>
-                                  <option value={tomorrowplus1}>{tomorrowplus2}</option>
-                                  <option value={tomorrowplus1}>{tomorrowplus3}</option>
-                                  <option value={tomorrowplus1}>{tomorrowplus4}</option>
-                                  <option value={tomorrowplus1}>{tomorrowplus5}</option>
+                                  <option value={tomorrowplus2}>{tomorrowplus2}</option>
+                                  <option value={tomorrowplus3}>{tomorrowplus3}</option>
+                                  <option value={tomorrowplus4}>{tomorrowplus4}</option>
+                                  <option value={tomorrowplus5}>{tomorrowplus5}</option>
                                 </select>
                               </div>
 
