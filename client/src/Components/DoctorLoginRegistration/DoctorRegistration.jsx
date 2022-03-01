@@ -88,6 +88,10 @@ const DoctorRegistration = () => {
                                                 <input type="email" class="form-control" name="email" id="email" value={doctor.email} onChange={handleInputs}  placeholder="Example: amitjanna@gmail.com" />
                                             </div>
                                             <div class="mb-3">
+                                                <label for="dregisterationnum" class="form-label">Doctor Registration Number</label>
+                                                <input type="text" class="form-control" name="dregisterationnum" id="dregisterationnum" placeholder="Example: DCGA56382" />
+                                            </div>
+                                            <div class="mb-3">
                                                 <label for="" class="form-label">Designation</label>
                                                 <input type="text" class="form-control" name="designation" id="designation" value={doctor.designation} onChange={handleInputs} placeholder="Example: Dental Surgeon" />
                                             </div>
