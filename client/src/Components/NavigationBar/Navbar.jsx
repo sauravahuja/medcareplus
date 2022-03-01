@@ -27,13 +27,13 @@ const Navbar = () => {
 
             data = await res.json();
             data.map((item, index) => {
-                console.log(PatientEmail);
+                // console.log(PatientEmail);
                 if (PatientEmail == item.email) {
                     LoggedInUser = item.name;
                     localStorage.setItem("cuser", LoggedInUser);
                 }
             })
-            console.log("PatientEmail:", PatientEmail);
+            // console.log("PatientEmail:", PatientEmail);
 
         } catch (error) {
             console.log(error);
@@ -52,9 +52,9 @@ const Navbar = () => {
                 headers: { "Content-Type": "application/json" },
             });
             getDoctors = await res.json();
-            console.log("Doctors are:", getDoctors);
+            // console.log("Doctors are:", getDoctors);
 
-            console.log(DoctorEmail);
+            // console.log(DoctorEmail);
 
             getDoctors.map((item, index) => {
                 if (DoctorEmail == item.email) {
@@ -144,13 +144,13 @@ const Navbar = () => {
 
         <>
             <section id="top-nav">
-                <div className="d-flex" style={{ "justify-content": "space-between" }}>
+                <div className="d-flex" style={{ "justifyContent": "space-between" }}>
                     <div className="d-flex flex-row-reverse">
                         <img src={facebook} alt="Facebook Logo" height="27px" style={{ padding: "0 4px" }} />
                         <img src={instagram} alt="Instagram Logo" height="27px" style={{ padding: "0 4px" }} />
                         <img src={github} alt="Github Logo" height="27px" style={{ padding: "0 4px" }} />
                     </div>
-                    <h6 style={{ "padding-right": "50px", "padding-top": "5px" }}>Greetings, {localStorage.getItem("cuser")}</h6>
+                    <h6 style={{ "paddingRight": "50px", "paddingTop": "5px" }}>Greetings, {localStorage.getItem("cuser")}</h6>
                 </div>
             </section>
 
