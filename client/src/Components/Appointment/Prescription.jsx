@@ -42,6 +42,7 @@ const Prescription = () => {
         e.preventDefault();
         console.log(e.target);
         emailjs.sendForm('service_iahndb7', 'template_tlgrcai', e.target, 'user_zfai6BIAv43mG08ahqiQr').then(res=>{
+            alert("Prescription Sent !");
             console.log(res);
         }).catch(err=>console.log(err));
     }

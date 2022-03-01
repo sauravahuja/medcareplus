@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import { NavLink, useHistory } from "react-router-dom";
 import LoginImg from "../LoginRegistration/LoginImg";
 import SectionHeader from "../SectionHeader";
-
+import emailjs from 'emailjs-com';
 
 const DoctorRegistration = () => {
     
@@ -20,8 +20,17 @@ const DoctorRegistration = () => {
 
         setDoctor({...doctor, [name]:value});
     }
-
+    const submitMail = (e) => {
+        alert("This is submit mail !");
+        e.preventDefault();
+        console.log(e.target);
+        emailjs.sendForm('service_iahndb7', 'template_euub6ik', e.target, 'user_zfai6BIAv43mG08ahqiQr').then(res=>{
+            alert("Registration Mail Sent !");
+            console.log(res);
+        }).catch(err=>console.log(err));
+    }
     const PostData = async (e) => {
+        submitMail(e);
         e.preventDefault();
 
         const {name, email, designation, experience, phone, location, password, approved, numReviews} = doctor;
@@ -49,6 +58,12 @@ const DoctorRegistration = () => {
         }
     }
 
+    let date = new Date();
+    let today = date.toDateString();
+  
+    date.setDate(date.getDate() + 1);
+    let tomorrow = date.toDateString();
+
     return (
         <>
             <section id="doctor-registration">
@@ -62,7 +77,7 @@ const DoctorRegistration = () => {
                                     </div>
                                     <div className="col-md-6 my-auto">
                                         <SectionHeader title="Doctor Registration" />
-                                        <form>
+                                        <form onSubmit={PostData}>
                                             <div class="mb-3">
                                                 <label for="" class="form-label">Full Name</label>
                                                 <input type="text" class="form-control" 
@@ -78,11 +93,11 @@ const DoctorRegistration = () => {
                                             </div>
                                             <div class="mb-3">
                                                 <label for="" class="form-label">Years of Experience</label>
-                                                <input type="number" class="form-control" name="experience" id="experience" value={doctor.experience} onChange={handleInputs}  placeholder="Example: 11 Years" />
+                                                <input type="number" min="1" class="form-control" name="experience" id="experience" value={doctor.experience} onChange={handleInputs}  placeholder="Example: 11 Years" />
                                             </div>
                                             <div class="mb-3">
                                                 <label for="" class="form-label">Phone Number</label>
-                                                <input type="number" class="form-control" name="phone" id="phone" value={doctor.phone} onChange={handleInputs} placeholder="Example: 8452083830" />
+                                                <input type="text" class="form-control" name="phone" id="phone" value={doctor.phone} onChange={handleInputs} placeholder="Example: 8452083830" />
                                             </div>
                                             <div class="mb-3">
                                                 <label for="" class="form-label">Location</label>
@@ -98,10 +113,13 @@ const DoctorRegistration = () => {
                                             <div class="mb-3">
                                                 <input type="number" class="form-control" name="num-reviews" id="num-reviews" value={0} onChange={handleInputs} hidden/>
                                             </div>
+                                            <div class="mb-3">
+                                                <input type="text" class="form-control" name="tom-date" id="tom-date" value={tomorrow} onChange={handleInputs} hidden/>
+                                            </div>
                                             {/* <div class="mb-3">
                                                 <input type="number" class="form-control" name="user" id="user" value={doctor.user} onChange={handleInputs} hidden/>
                                             </div> */}
-                                            <button type="submit" class="btn btn-primary w-100" onClick={PostData}>Register</button>
+                                            <input type="submit" class="btn btn-primary w-100" value="Register"/>
                                         </form>
                                         <div className="row">
                                             <div className="col-md-12 mx-auto">
