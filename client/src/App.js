@@ -25,6 +25,7 @@ import RatingReview from './Components/DoctorSearch/RatingReview';
 
 import { reducer, initialState } from "./Components/reducer/UseReducer";
 import Prescription from './Components/Appointment/Prescription';
+import DoctorDashboard from './Components/Dashboard/DoctorDashboard';
 
 
 //context API
@@ -59,6 +60,7 @@ const Routing = () => {
         <Route exact path="/doctorsearch/:doctorId" component={RatingReview}></Route>
         <Route exact path="/pharmacy/checkout" component={PharmacyAddress}></Route>
         <Route exact path="/doctor/prescription/:patientname" component={Prescription}></Route>
+        <Route exact path="/doctor/dashboard" component={DoctorDashboard}></Route>
       </Switch>
   )
 }
@@ -71,7 +73,7 @@ const App = () => {
   return (
     <>
       <UserContext.Provider value={{state, dispatch}}>
-        <Navbar />
+        {/* <Navbar /> */}
         <Routing />
       </UserContext.Provider>
     </>

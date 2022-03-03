@@ -4,6 +4,7 @@ import { NavLink, useHistory } from "react-router-dom";
 import LoginImg from "./LoginImg";
 
 import { UserContext } from "../../App"
+import Navbar from "../NavigationBar/Navbar";
 
 const Login = () => {
 
@@ -45,6 +46,7 @@ const Login = () => {
 
     return (
         <>
+        <Navbar />
             <section id="login">
                 <div className="container-fluid">
                     <div className="content-box-md">

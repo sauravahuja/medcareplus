@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import SectionHeader from "../SectionHeader";
 import emailjs from 'emailjs-com';
+import Navbar from "../NavigationBar/Navbar";
 
 const Prescription = () => {
 
@@ -41,10 +42,10 @@ const Prescription = () => {
     const submitPrescription = (e) => {
         e.preventDefault();
         console.log(e.target);
-        emailjs.sendForm('service_iahndb7', 'template_tlgrcai', e.target, 'user_zfai6BIAv43mG08ahqiQr').then(res=>{
+        emailjs.sendForm('service_iahndb7', 'template_tlgrcai', e.target, 'user_zfai6BIAv43mG08ahqiQr').then(res => {
             alert("Prescription Sent !");
             console.log(res);
-        }).catch(err=>console.log(err));
+        }).catch(err => console.log(err));
     }
 
 
@@ -96,6 +97,7 @@ const Prescription = () => {
 
     return (
         <>
+            <Navbar />
             <section id="pharmacy">
                 <div className="container">
                     <div className="content-box-sm">
@@ -118,7 +120,7 @@ const Prescription = () => {
                                                     <>
                                                         <div className="mb-2">
                                                             <label for="patientEmail" className="pb-2">Patient Email</label>
-                                                            <input name="patientemail" type="text" className="form-control" id="patientEmail" value={item.email}     />
+                                                            <input name="patientemail" type="text" className="form-control" id="patientEmail" value={item.email} />
                                                         </div>
                                                     </>
                                                 )
@@ -127,13 +129,13 @@ const Prescription = () => {
                                     }
                                     <div className="mb-2">
                                         <label for="patientDiagnosis" className="pb-2">Diagnosis</label>
-                                        <textarea name="patientdiagnosis" id="patientDiagnosis" className="form-control"/>
+                                        <textarea name="patientdiagnosis" id="patientDiagnosis" className="form-control" />
                                     </div>
                                     <div className="mb-2">
                                         <label for="patientPrescription" className="pb-2">Prescription</label>
-                                        <textarea name="patientprescription" id="patientPrescription" className="form-control"/>
+                                        <textarea name="patientprescription" id="patientPrescription" className="form-control" />
                                     </div>
-                                    <input id="prescription" type="submit" className="btn btn-primary w-100" value="Give Prescription"/>
+                                    <input id="prescription" type="submit" className="btn btn-primary w-100" value="Give Prescription" />
                                 </form>
                             </div>
                         </div>

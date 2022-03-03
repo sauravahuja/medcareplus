@@ -4,6 +4,7 @@ import LoginImg from "../LoginRegistration/LoginImg";
 import SectionHeader from "../SectionHeader";
 
 import { UserContext } from "../../App"
+import Navbar from "../NavigationBar/Navbar";
 
 const DoctorLogin = () => {
 
@@ -35,7 +36,7 @@ const DoctorLogin = () => {
             console.log("Invalid Credentials");
         } else {
             dispatch({ type: "USER", payload: true })
-            
+
             localStorage.setItem("currentdoctorloggedin", email);
             console.log(localStorage.getItem("currentdoctorloggedin"));
             window.alert("Login Successful");
@@ -47,6 +48,7 @@ const DoctorLogin = () => {
 
     return (
         <>
+            <Navbar />
             <section id="doctor-registration">
                 <div className="container-fluid">
                     <div className="content-box-md">
