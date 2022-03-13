@@ -26,6 +26,9 @@ import RatingReview from './Components/DoctorSearch/RatingReview';
 import { reducer, initialState } from "./Components/reducer/UseReducer";
 import Prescription from './Components/Appointment/Prescription';
 import DoctorDashboard from './Components/Dashboard/DoctorDashboard';
+import ForumList from './Components/Forum/ForumList';
+import ForumForm from './Components/Forum/ForumForm';
+import ForumSolo from './Components/Forum/ForumSolo';
 
 
 //context API
@@ -61,6 +64,9 @@ const Routing = () => {
         <Route exact path="/pharmacy/checkout" component={PharmacyAddress}></Route>
         <Route exact path="/doctor/prescription/:patientname" component={Prescription}></Route>
         <Route exact path="/doctor/dashboard" component={DoctorDashboard}></Route>
+        <Route exact path="/forum" component={ForumList}></Route>
+        <Route exact path="/forum/new" component={ForumForm}></Route>
+        <Route exact path="/forum/view/:title" component={ForumSolo}></Route>
       </Switch>
   )
 }
