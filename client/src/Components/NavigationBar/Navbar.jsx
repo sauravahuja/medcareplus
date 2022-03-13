@@ -77,30 +77,38 @@ const Navbar = () => {
 
     const { state, dispatch } = useContext(UserContext);
     const RenderMenu = () => {
-        if (state) {
+        var a = document.cookie;
+        console.log(a);
+        if (a.includes("true")) {
             return (
                 <>
                     <div className="d-flex flex-row-reverse">
                         <ul className="navbar-nav">
                             <li className="nav-item">
-                                <NavLink className="btn btn-danger btn-sm mx-2" to="/logout">Logout</NavLink>
+                                <a className="btn btn-danger btn-sm mx-2" href="/logout">Logout</a>
                             </li>
                         </ul>
                     </div>
                 </>
             )
-        } else {
+        }
+        // if (state) {
+        //     return (
+        //         <>
+        //             <div className="d-flex flex-row-reverse">
+        //                 <ul className="navbar-nav">
+        //                     <li className="nav-item">
+        //                         <NavLink className="btn btn-danger btn-sm mx-2" to="/logout">Logout</NavLink>
+        //                     </li>
+        //                 </ul>
+        //             </div>
+        //         </>
+        //     )
+        // } 
+        else {
 
             return (
                 <>
-
-                    {/* <NavLink className="btn btn-outline-light btn-sm mx-2" to="/register">Patient Registeration</NavLink>
-                    <NavLink className="btn btn-outline-light btn-sm mx-2" to="/login">Patient Login</NavLink>
-                    <NavLink className="btn btn-outline-light btn-sm mx-2" to="/admin/login">Admin Login </NavLink>
-                    <NavLink className="btn btn-outline-light btn-sm mx-2" to="/admin/register">Admin Registrtation </NavLink>
-                    <NavLink className="btn btn-outline-light btn-sm mx-2" to="/doctor/register">Doctor Registeration</NavLink>
-                    <NavLink className="btn btn-outline-light btn-sm mx-2" to="/doctor/login">Doctor Login</NavLink> */}
-
                     <div className="d-flex justify-content-around me-5 pe-5">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <li className="nav-item dropdown mx-2">

@@ -8,7 +8,7 @@ const Prescription = () => {
 
     const param = useParams();
     // console.log(param);
-    var doctorName = localStorage.getItem("prescriptionDoctorName");
+    var doctorName = localStorage.getItem("cuser");
 
     const [patientData, setPatientData] = useState([]);
 

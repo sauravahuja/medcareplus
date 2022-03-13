@@ -7,7 +7,6 @@ import { UserContext } from "../../App"
 import Navbar from "../NavigationBar/Navbar";
 
 const DoctorLogin = () => {
-
     const { state, dispatch } = useContext(UserContext);
 
     const history = useHistory();
@@ -36,13 +35,10 @@ const DoctorLogin = () => {
             console.log("Invalid Credentials");
         } else {
             dispatch({ type: "USER", payload: true })
-
             localStorage.setItem("currentdoctorloggedin", email);
-            console.log(localStorage.getItem("currentdoctorloggedin"));
             window.alert("Login Successful");
             console.log("Login Successful");
-
-            history.push('/');
+            history.push('/doctor/dashboard');
         }
     }
 
