@@ -118,6 +118,8 @@ const Navbar = () => {
                                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <li><a className="dropdown-item" href="/login">Patient Login</a></li>
                                     <li><a className="dropdown-item" href="/register"> Patient Register</a></li>
+                                    <li><hr class="dropdown-divider"/></li>
+                                    <li><a class="dropdown-item" href="/patient/dashboard">Patient Dashboard</a></li>
                                 </ul>
                             </li>
 
@@ -128,6 +130,8 @@ const Navbar = () => {
                                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <li><a className="dropdown-item" href="/doctor/login">Doctor Login</a></li>
                                     <li><a className="dropdown-item" href="/doctor/register"> Doctor Register</a></li>
+                                    <li><hr class="dropdown-divider"/></li>
+                                    <li><a class="dropdown-item" href="/doctor/dashboard">Doctor Dashboard</a></li>
                                 </ul>
                             </li>
 
@@ -138,6 +142,8 @@ const Navbar = () => {
                                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <li><a className="dropdown-item" href="/admin/login">Admin Login</a></li>
                                     {/* <li><a className="dropdown-item" href="/admin/register"> Admin Register</a></li> */}
+                                    <li><hr class="dropdown-divider"/></li>
+                                    <li><a class="dropdown-item" href="/admin/doctorapproval">Approval Page</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -173,22 +179,31 @@ const Navbar = () => {
                             <li className="nav-item">
                                 <NavLink className="nav-link" to="/">Home</NavLink>
                             </li>
-                            <li className="nav-item">
+                            {/* <li className="nav-item">
                                 <NavLink className="nav-link" to="/doctorsearch">Doctor Search</NavLink>
-                            </li>
-                            <li className="nav-item">
+                            </li> */}
+                            {/* <li className="nav-item">
                                 <a className="nav-link " href="https://medcare-bloodbankstats.netlify.app/" target="_blank">Blood Bank</a>
-                            </li>
+                            </li> */}
                             <li className="nav-item">
                                 <NavLink className="nav-link" to="/ambulancelist">Ambulance</NavLink>
                             </li>
-                            <li className="nav-item">
+                            {/* <li className="nav-item">
                                 <NavLink className="nav-link" to="/admin/doctorapproval">Approval page</NavLink>
-                            </li>
+                            </li> */}
                             <li className="nav-item">
                                 <NavLink className="nav-link" to="/pharmacy">Pharmacy</NavLink>
                             </li>
-                            <li className="nav-item dropdown mx-2">
+                            <li className="nav-item">
+                                <NavLink className="nav-link" to="/patient/dashboard">Patient Dashboard</NavLink>
+                            </li>
+                            <li className="nav-item">
+                                <NavLink className="nav-link" to="/doctor/dashboard">Doctor Dashboard</NavLink>
+                            </li>
+                            {/* <li className="nav-item">
+                                <NavLink className="nav-link" to="/news">News(Beta)</NavLink>
+                            </li> */}
+                            {/* <li className="nav-item dropdown mx-2">
                                 <a className="nav-link dropdown-toggle p-2" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Appointment
                                 </a>
@@ -196,7 +211,7 @@ const Navbar = () => {
                                     <li><a className="dropdown-item" href="/appointment/patient">Patient Appointment</a></li>
                                     <li><a className="dropdown-item" href="/appointment/doctor"> Doctor Appointment</a></li>
                                 </ul>
-                            </li>
+                            </li> */}
                         </ul>
                         <RenderMenu />
                     </div>

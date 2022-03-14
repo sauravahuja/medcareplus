@@ -6,24 +6,25 @@ import Footer from "../Footer";
 import { useHistory, NavLink } from "react-router-dom";
 import "./dashboard.css";
 import Ratings from "../DoctorSearch/Ratings";
+// import { set } from "mongoose";
 
-const DoctorDashboard = () => {
+const PatientDashboard = () => {
     const history = useHistory();
     var appointmentData = "";
 
-    // FETCHING DOCTOR APPOINTMENTS
-    const [doctorDetails, setDoctorDetails] = useState([]);
+    // FETCHING PATIENT APPOINTMENTS
+    const [patientDetails, setPatientDetails] = useState([]);
 
-    // FETCHING DOCTOR REVIEWS
-    const [doctorReviews, setDoctorReviews] = useState([]);
+    // FETCHING PATIENT REVIEWS
+    const [patientReviews, setPatientReviews] = useState([]);
 
     // CURRENT USER LOGGED IN
     const [currentUser, setCurrentUser] = useState([]);
 
     // MIDDLEWARE
-    const doctorMiddleware = async () => {
+    const patientMiddleware = async () => {
         try {
-            const res = await fetch("/getDoctorMiddleware", {
+            const res = await fetch("/getPatientMiddleware", {
                 method: "GET",
                 headers: {
                     Accept: "application/json",
@@ -33,14 +34,12 @@ const DoctorDashboard = () => {
             });
 
             const data = await res.json();
-            console.log(data);
+            // console.log(data);
+            appointmentData = data;
             setCurrentUser(data);
             // console.log(currentUser);
-
-            appointmentData = data;
-            //   setDoctorDetails(data);
-            // localStorage.setItem("doctorName", data.name);
-            // console.log("Appointment Data new:", appointmentData);
+            // localStorage.setItem("patientName", data.name);
+            // console.log("Appointment Data new:",appointmentData);
 
             if (!res.status === 200) {
                 const error = new Error(res.error);
@@ -48,21 +47,21 @@ const DoctorDashboard = () => {
             }
         } catch (error) {
             console.log(error);
-            history.push("/doctor/login");
+            history.push("/login");
         }
     };
 
 
-    // FETCHING DOCTOR APPOINTMENT
-    const getDoctorData = async () => {
+    // FETCHING PATIENT APPOINTMENT
+    const getPatientData = async () => {
         try {
-            const res = await fetch("/getDoctorAppointment", {
+            const res = await fetch("/getPatientAppointment", {
                 method: "GET",
-                headers: { "Content-Type": "application/json" },
+                headers: { 'Content-Type': 'application/json' }
             });
-            const getDoctorAppointment = await res.json();
-            //   console.log("Patients Appointmet:", getDoctorAppointment);
-            setDoctorDetails(getDoctorAppointment);
+            const getPatient = await res.json();
+            console.log("Patients Appointmet:", getPatient);
+            setPatientDetails(getPatient);
 
             if (!res.status === 200) {
                 const error = new Error(res.error);
@@ -71,10 +70,10 @@ const DoctorDashboard = () => {
         } catch (err) {
             console.log(err);
         }
-    };
+    }
 
     // FETCHING REVIEW
-    const getDoctorReview = async () => {
+    const getPatientReview = async () => {
         try {
             const res = await fetch("http://localhost:5000/getDoctorReview", {
                 method: "GET",
@@ -82,7 +81,7 @@ const DoctorDashboard = () => {
             });
             const getReviews = await res.json();
             console.log(getReviews);
-            setDoctorReviews(getReviews);
+            setPatientReviews(getReviews);
 
             if (!res.status === 200) {
                 const error = new Error(res.error);
@@ -94,9 +93,9 @@ const DoctorDashboard = () => {
     };
 
     useEffect(() => {
-        doctorMiddleware();
-        getDoctorData();
-        getDoctorReview();
+        patientMiddleware();
+        getPatientData();
+        getPatientReview();
     }, []);
 
     return (
@@ -160,6 +159,11 @@ const DoctorDashboard = () => {
                                 </NavLink>
                             </li>
                             <li className="nav-item">
+                                <NavLink className="nav-link" to="/doctorsearch">
+                                    Doctor Search
+                                </NavLink>
+                            </li>
+                            <li className="nav-item">
                                 <a
                                     className="nav-link "
                                     href="https://medcare-bloodbankstats.netlify.app/"
@@ -174,15 +178,15 @@ const DoctorDashboard = () => {
                                 </NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink className="nav-link" to="/forum">
-                                    Medcare Plus Forum
+                                <NavLink className="nav-link" to="/pharmacy">
+                                    Pharmacy
                                 </NavLink>
                             </li>
                         </ul>
                         <form class="d-flex flex-row-reverse">
-                            <NavLink class="btn btn-danger" to="/logout">
+                            <button class="btn btn-danger" type="submit">
                                 Logout
-                            </NavLink>
+                            </button>
                         </form>
                     </div>
                 </div>
@@ -196,27 +200,28 @@ const DoctorDashboard = () => {
                         <div className="mt-5"></div>
                         <div className="d-flex justify-content-between">
                             <div className="work-container w-70">
-                                <h3 className="mb-4">Booked Appointments</h3>
+                                <h3 className="mb-4">My Appointments</h3>
                                 <div className="appointment-card-wrapper">
                                     {/* card 1 */}
 
-                                    {doctorDetails.map((item, index) => {
+                                    {patientDetails.map((item, index) => {
                                         {
                                             {/* console.log(`Appointment Details ${item.pname}`, item); */ }
                                         }
-                                        if (item.doctor == currentUser.name) {
+                                        if (item.pname == currentUser.name) {
                                             var name = "/doctor/prescription/" + item.pname;
                                             {/* localStorage.setItem("prescriptionPatientName" + itemIndex, item.pname);
                         itemIndex = itemIndex + 1;
                         localStorage.setItem("prescriptionDoctorName", item.doctor);
                         var hrefLink = "/doctor/prescription/" + item.pname; */}
+                                            // console.log(item);
                                             return (
                                                 <>
                                                     <div className="appointment-card-single" key={index}>
                                                         <div className="d-flex justify-content-between">
                                                             <div className="appointment-card-left w-70">
                                                                 <p>
-                                                                    <b>Patient Name:</b> {item.pname}
+                                                                    <b>Doctor Name:</b> {item.doctor}
                                                                 </p>
                                                                 <p>
                                                                     <b>Priority:</b> {item.priority}
@@ -236,9 +241,6 @@ const DoctorDashboard = () => {
                                                             <a href="/" className="btn btn-success mx-1">
                                                                 Video Call
                                                             </a>
-                                                            <a href={name} className="btn btn-primary mx-1">
-                                                                Give Prescription
-                                                            </a>
                                                         </div>
                                                     </div>
                                                 </>
@@ -249,14 +251,15 @@ const DoctorDashboard = () => {
                             </div>
 
                             <div className="review-container w-27">
-                                <h3 className="mb-4">Ratings & Reviews</h3>
+                                <h3 className="mb-4">Sent: Ratings & Reviews</h3>
                                 {
-                                    doctorReviews.map((item, index) => {
-                                        if (item.name == currentUser.name) {
+                                    patientReviews.map((item, index) => {
+                                        if (item.pname == currentUser.name) {
+                                            console.log(item);
                                             return (
                                                 <>
                                                     <div className="dashboard-review-wrapper">
-                                                        <p className="m-0">From: {item.pname}</p>
+                                                        <p className="m-0">To: {item.name}</p>
                                                         <p className="pt-1 m-0">
                                                             <Ratings value={item.rating} />
                                                         </p>
@@ -280,4 +283,4 @@ const DoctorDashboard = () => {
     );
 };
 
-export default DoctorDashboard;
+export default PatientDashboard;

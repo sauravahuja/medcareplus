@@ -91,7 +91,7 @@ const ForumForm = () => {
 
                                     </div>
                                     <div class="mb-3">
-                                        <input type="text" class="form-control" id="date" name="date" placeholder="https://imagelink" value={today} />
+                                        <input type="text" disabled class="form-control" id="date" name="date" placeholder="https://imagelink" value={today} />
                                     </div>
                                     <button type="submit" class="btn btn-primary w-100" onClick={PostData}>Add to Forum</button>
                                 </form>

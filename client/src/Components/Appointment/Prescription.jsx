@@ -7,7 +7,7 @@ import Navbar from "../NavigationBar/Navbar";
 const Prescription = () => {
 
     const param = useParams();
-    // console.log(param);
+    console.log(param);
     var doctorName = localStorage.getItem("cuser");
 
     const [patientData, setPatientData] = useState([]);
