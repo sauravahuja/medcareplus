@@ -28,7 +28,7 @@ const DoctorSearch = () => {
                         <div className="content-box-md">
                             <div className="row">
                                 <div className="col-md-10 mx-auto">
-                                    <div className="row">
+                                    <div className="row search-flexed mx-auto">
                                         <div className="col-md-9">
                                             <div className="row mx-3">
                                                 <div className="col-md-12">

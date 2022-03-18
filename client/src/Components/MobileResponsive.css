@@ -2,6 +2,17 @@
     .card-bg {
         height: 344px;
     }
+    .search-flexed{
+        display: inline-block;
+        width: 100%;
+    }
+    #doctor-search .col-md-9{
+        width: 100% !important;
+    }
+    #doctor-search .col-md-3{
+        width: 50% !important;
+        margin: auto;
+    }
 }
 
 
@@ -33,6 +44,30 @@
 
     .content-box-md {
         padding: 70px 0 !important;
+    }
+
+    /****
+    Doctor Search
+    ****/
+    .search-wrapper{
+        display: block;
+    }
+    .right-container{
+        width: 80%;
+        margin: 0 auto !important;
+        display: flex;
+        justify-content: flex-start;
+    }
+    .btn-container{
+        margin: 5px;
+    }
+    .right-container p{
+        padding-top: 15px;
+        margin-right: 80px;
+    }
+    hr{
+        margin-top: 15px;
+        margin-bottom: 0;
     }
 }
 
@@ -101,5 +136,40 @@
 
     .news-cards-img img {
         height: auto;
+    }
+
+    /**
+    Doctor Search
+    **/
+    .left-container{
+        display: block;
+    }
+    .doc-image img{
+        width: 100%;
+    }
+    .right-container{
+        display: block;
+        width: 100%;
+    }
+    .btn-container{
+        display: inline-block;
+    }
+    .search-wrapper .mx-auto{
+        margin: 5px 20px!important;
+    }
+    .left-container .px-5{
+        padding: 0 !important;
+        padding-left: 20px !important;
+        padding-top: 10px !important;
+    }
+    #doctor-search .col-md-3{
+        width: 93% !important;
+    }
+    .section-img .header h2{
+        font-size: 22px;
+        text-align: center;
+    }
+    .section-img .header{
+        padding: 10px 70px;
     }
 }

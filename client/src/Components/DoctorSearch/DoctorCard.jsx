@@ -199,7 +199,7 @@ const DoctorCard = ({ search }) => {
 
   return (
     <>
-      <div className="">
+      <div className="mx-auto">
         <form method="GET">
           {context &&
             context.map((item, index) => (
@@ -222,11 +222,12 @@ const DoctorCard = ({ search }) => {
                       Fees: Rs. 1000 in Clinic
                     </p>
 
-                    <p className="mb-1 mt-1">
+                    {/* <p className="mb-1 mt-1">
                       <Ratings value={item.ratings} />
-                    </p>
+                    </p> */}
                   </div>
                 </div>
+                <hr />
                 <div className="right-container my-auto mx-auto">
                   <p>Pricing: Free Booking</p>
                   <div className="btn-container mt-2">
