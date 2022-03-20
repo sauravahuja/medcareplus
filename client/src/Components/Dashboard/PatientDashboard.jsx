@@ -184,9 +184,9 @@ const PatientDashboard = () => {
                             </li>
                         </ul>
                         <form class="d-flex flex-row-reverse">
-                            <button class="btn btn-danger" type="submit">
+                            <NavLink class="btn btn-danger" to="/logout">
                                 Logout
-                            </button>
+                            </NavLink>
                         </form>
                     </div>
                 </div>
@@ -198,7 +198,7 @@ const PatientDashboard = () => {
                         <h4>Greetings, {currentUser.name}</h4>
                         <hr />
                         <div className="mt-5"></div>
-                        <div className="d-flex justify-content-between">
+                        <div className="d-flex justify-content-between patient-dashboard">
                             <div className="work-container w-70">
                                 <h3 className="mb-4">My Appointments</h3>
                                 <div className="appointment-card-wrapper">
@@ -238,7 +238,7 @@ const PatientDashboard = () => {
                                                         </div>
                                                         <hr />
                                                         <div className="d-flex flex-row-reverse">
-                                                            <a href="/" className="btn btn-success mx-1">
+                                                            <a href="https://medcareplus-video.netlify.app/" target="_blank" className="btn btn-success mx-1">
                                                                 Video Call
                                                             </a>
                                                         </div>

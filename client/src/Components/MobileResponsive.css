@@ -26,6 +26,29 @@
     .login-image-container img{
         height: 420px;
     }
+    /*
+        Patient Dashboard
+    **/
+    .patient-dashboard{
+        display: block !important;
+    }
+    .patient-dashboard .w-70,
+    .patient-dashboard .w-27{
+        width: 100%;
+    }
+    .review-container{
+        padding: 20px 0;
+    }
+
+    /**
+        pharmacy
+    **/
+    .medicine-card{
+        width: auto;
+    }
+    #pharmacy .col-md-3{
+        width: auto;
+    }
 }
 
 
@@ -82,7 +105,7 @@
         margin-right: 80px;
     }
 
-    hr {
+    .search-wrapper hr {
         margin-top: 15px;
         margin-bottom: 0;
     }
@@ -91,6 +114,21 @@
     ***/
     .login-image-container{
         display: none;
+    }
+    /**
+        pharmacy
+    **/
+    .medicine-card{
+        width: auto;
+    }
+    #pharmacy .row{
+        display: block;
+    }
+    #pharmacy .col-md-9{
+        width: 100%;
+    }
+    .medicine-cards{
+        justify-content: center;
     }
 }
 
@@ -124,6 +162,22 @@
 
     body {
         overflow-x: hidden;
+    }
+
+    /**
+        pharmacy
+    **/
+    .medicine-card{
+        width: 45%;
+    }
+    #pharmacy .row{
+        display: block;
+    }
+    #pharmacy .col-md-9{
+        width: 100%;
+    }
+    .medicine-cards{
+        justify-content: center;
     }
 }
 
@@ -202,5 +256,12 @@
 
     .section-img .header {
         padding: 10px 70px;
+    }
+
+    /****
+    pharmacy
+    **/
+    .medicine-card{
+        width: 80%;
     }
 }
