@@ -45,7 +45,7 @@ const ForumList = () => {
                             <NavLink className="btn btn-primary" to="/forum/new">New Discussion</NavLink>
                         </div>
                     </div>
-                    <div className="row">
+                    <div className="row forumwrapper">
                         <div className="col-md-10 mx-auto">
                             <div className="forum-wrapper">
                                 {

@@ -130,6 +130,15 @@
     .medicine-cards{
         justify-content: center;
     }
+    /***
+    Forum
+    **/
+    #forumlist .container{
+        max-width: 830px;
+    }
+    #forumlist .col-md-10{
+        width: 100%;
+    }
 }
 
 
@@ -263,5 +272,12 @@
     **/
     .medicine-card{
         width: 80%;
+    }
+
+    #forumlist .forum-wrapper{
+        display: block !important;
+    }
+    #forumlist .forum-card{
+        width: auto;
     }
 }
