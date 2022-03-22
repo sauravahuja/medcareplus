@@ -427,18 +427,23 @@ router.get("/doctorSearch/:id", async (req, res) => {
 
 // REVIEW DOCTOR
 router.post("/doctorSearch/reviews", async (req, res) => {
-  const { pname, doctorsId, name, rating, comment } = req.body;
+  const { pname, name, rating, comment } = req.body;
 
-  if (!pname || !doctorsId || !name || !rating || !comment) {
+  console.log(req.body);
+
+  if (!pname || !name || !rating || !comment) {
     return res.status(422).json({ error: "Plz filled the field properly" });
+  }
+  if(rating > 5) {
+    return res.status(422).json({ error: "Plz Rate properly" });
   }
 
   try {
     const ratingExist = await Review.findOne({ rating: rating });
     const commentExist = await Review.findOne({ comment: comment });
 
-    const review = new Review({ pname, doctorsId, name, rating, comment });
-
+    const review = new Review({ pname, name, rating, comment });
+    console.log(review);
     await review.save();
 
     res.status(200).json({ message: "You have Reviewed Doctor Successfully" });

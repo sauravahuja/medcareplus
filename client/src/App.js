@@ -30,6 +30,7 @@ import ForumList from './Components/Forum/ForumList';
 import ForumForm from './Components/Forum/ForumForm';
 import ForumSolo from './Components/Forum/ForumSolo';
 import PatientDashboard from './Components/Dashboard/PatientDashboard';
+import PharmacyBook from './Components/Pharmacy/PharmacyBook';
 
 
 //context API
@@ -60,7 +61,8 @@ const Routing = () => {
         <Route exact path="/appointment/patient" component={PatientAppointment}></Route>
         <Route exact path="/appointment/doctor" component={DoctorAppointment}></Route>
         <Route exact path="/logout" component={Logout}></Route>
-        <Route exact path="/pharmacy" component={Pharmacy}></Route>
+        <Route exact path="/pharmacy/book" component={Pharmacy}></Route>
+        <Route exact path="/pharmacy" component={PharmacyBook}></Route>
         <Route exact path="/doctorsearch/:doctorId" component={RatingReview}></Route>
         <Route exact path="/pharmacy/checkout" component={PharmacyAddress}></Route>
         <Route exact path="/doctor/prescription/:patientname" component={Prescription}></Route>
