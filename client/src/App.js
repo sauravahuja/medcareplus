@@ -31,6 +31,7 @@ import ForumForm from './Components/Forum/ForumForm';
 import ForumSolo from './Components/Forum/ForumSolo';
 import PatientDashboard from './Components/Dashboard/PatientDashboard';
 import PharmacyBook from './Components/Pharmacy/PharmacyBook';
+import DoctorModal from './Components/DoctorSearch/DoctorModal';
 
 
 //context API
@@ -71,6 +72,7 @@ const Routing = () => {
         <Route exact path="/forum" component={ForumList}></Route>
         <Route exact path="/forum/new" component={ForumForm}></Route>
         <Route exact path="/forum/view/:id" component={ForumSolo}></Route>
+        <Route exact path="/doctorsearch/bookappointment/:appointmentId" component={DoctorModal}></Route>
       </Switch>
   )
 }
