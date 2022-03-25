@@ -178,6 +178,11 @@ const DoctorDashboard = () => {
                                     Medcare Plus Forum
                                 </NavLink>
                             </li>
+                            <li className="nav-item">
+                                <NavLink className="nav-link" to="/doctor/dashboard">
+                                    Doctor Dashboard
+                                </NavLink>
+                            </li>
                         </ul>
                         <form class="d-flex flex-row-reverse">
                             <NavLink class="btn btn-danger" to="/logout">

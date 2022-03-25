@@ -182,6 +182,11 @@ const PatientDashboard = () => {
                                     Pharmacy
                                 </NavLink>
                             </li>
+                            <li className="nav-item">
+                                <NavLink className="nav-link" to="/patient/dashboard">
+                                    Patient Dashboard
+                                </NavLink>
+                            </li>
                         </ul>
                         <form class="d-flex flex-row-reverse">
                             <NavLink class="btn btn-danger" to="/logout">
