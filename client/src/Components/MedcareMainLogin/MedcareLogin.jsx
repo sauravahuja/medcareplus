@@ -1,0 +1,63 @@
+import { NavLink } from 'react-router-dom';
+import icon from '../../Assets/Images/pharmacy-image/1.png';
+import SectionHeader from '../SectionHeader';
+const MedcareLogin = () => {
+    return (
+        <>
+            <div id="medcare-login" style={{ height: "100vh" }}>
+                <div className="content-box-md">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-md-10 mx-auto">
+                                <div className="d-flex flex-row-reverse">
+                                    <NavLink to="/" class="btn btn-outline-secondary">Back to Home</NavLink>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col-md-10 mx-auto">
+                                <SectionHeader title="Medcare Login" />
+                                <div className="login-cards d-flex justify-content-around flex-wrap" style={{ height: "60vh", alignItems: "center" }}>
+                                    <div className="login-card" style={{ width: "340px", margin: "5px" }}>
+                                        <div className="login-card-img">
+                                            <img src={icon} alt="" style={{ display: "block", margin: "auto" }} height="70px" />
+                                        </div>
+                                        <div className="login-card-details" style={{ "text-align": "justify" }}>
+                                            <h4 className='text-center p-2'>Patient Login</h4>
+                                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa accusamus nobis repellat esse cupiditate, blanditiis suscipit id. Officia dolorem autem libero ipsum quo similique fuga.</p>
+                                        </div>
+                                        <NavLink to="/login" className="btn btn-primary d-flex justify-content-center">Patient Login</NavLink>
+                                    </div>
+
+                                    <div className="login-card" style={{ width: "340px", margin: "5px" }}>
+                                        <div className="login-card-img">
+                                            <img src={icon} alt="" style={{ display: "block", margin: "auto" }} height="70px" />
+                                        </div>
+                                        <div className="login-card-details" style={{ "text-align": "justify" }}>
+                                            <h4 className='text-center p-2'>Doctor Login</h4>
+                                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa accusamus nobis repellat esse cupiditate, blanditiis suscipit id. Officia dolorem autem libero ipsum quo similique fuga.</p>
+                                        </div>
+                                        <NavLink to="/login" className="btn btn-primary d-flex justify-content-center">Doctor Login</NavLink>
+                                    </div>
+
+                                    <div className="login-card" style={{ width: "340px", margin: "5px" }}>
+                                        <div className="login-card-img">
+                                            <img src={icon} alt="" style={{ display: "block", margin: "auto" }} height="70px" />
+                                        </div>
+                                        <div className="login-card-details" style={{ "text-align": "justify" }}>
+                                            <h4 className='text-center p-2'>Admin Login</h4>
+                                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa accusamus nobis repellat esse cupiditate, blanditiis suscipit id. Officia dolorem autem libero ipsum quo similique fuga.</p>
+                                        </div>
+                                        <NavLink to="/login" className="btn btn-primary d-flex justify-content-center">Admin Login</NavLink>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </>
+    )
+}
+
+export default MedcareLogin;
