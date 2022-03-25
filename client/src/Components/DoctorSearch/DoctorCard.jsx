@@ -221,9 +221,9 @@ const DoctorCard = ({ search }) => {
                       Designation: {item.designation}
                     </p>
                     <p className="location">Location/office: {item.location}</p>
-                    <p className="consultant-fees mb-0">
+                    {/* <p className="consultant-fees mb-0">
                       Fees: Rs. 1000 in Clinic
-                    </p>
+                    </p> */}
 
                     {/* <p className="mb-1 mt-1">
                       <Ratings value={item.ratings} />
