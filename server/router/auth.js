@@ -557,11 +557,20 @@ router.post("/prescription", async (req, res) => {
 
     await prescriptionPage.save();
 
-    res.status(201).json({ message: "Prescription Posted Successfully" });
+    res.status(201).json({ message: "Blog Posted Successfully" });
   } catch (error) {
     console.log(error);
   }
 });
 
+// FETCHING PRESCRIPTION DATA
+router.get("/getPrescription", async (req, res) => {
+  try {
+    const prescriptionData = await Prescription.find();
+    return res.json(prescriptionData);
+  } catch (err) {
+    return res.json(err);
+  }
+});
 
 module.exports = router;
