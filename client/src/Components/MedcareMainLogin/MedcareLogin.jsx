@@ -15,7 +15,7 @@ const MedcareLogin = () => {
                             </div>
                         </div>
                         <div className="row">
-                            <div className="col-md-10 mx-auto">
+                            <div className="col-md-12 mx-auto">
                                 <SectionHeader title="Medcare Login" />
                                 <div className="login-cards d-flex justify-content-around flex-wrap" style={{ height: "48.5vh", alignItems: "center" }}>
                                     <div className="login-card" style={{ width: "340px", margin: "5px", border: "solid 1px rgba(33, 132, 187, 1)", padding: "30px 15px", borderRadius: "10px" }}>
