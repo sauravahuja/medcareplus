@@ -14,6 +14,7 @@ const Admin = require("../model/adminSchema");
 const Appointment = require("../model/appointmentSchema");
 const Review = require("../model/reviewSchema");
 const Forum = require("../model/forumSchema");
+const Prescription = require("../model/prescriptionSchema");
 
 router.get("/", (req, res) => {
   res.send(`Hello world from the server route.js`);
@@ -535,5 +536,32 @@ router.get("/doctorSearch/bookAppointment/:id", async (req, res) => {
     console.log(error);
   }
 });
+
+// PRESCRIPTION DATA STORE
+router.post("/prescription", async (req, res) => {
+  console.log(req.body);
+  const { dname, pname,  date, diagnosis, prescriptions } = req.body;
+
+  if (!diagnosis || !prescriptions) {
+    return res.status(422).json({ error: "Plz filled the field properly" });
+  }
+
+  try {
+    const prescriptionPage = new Prescription({
+        dname,
+        pname,      
+        date,
+        diagnosis,
+        prescriptions
+    });
+
+    await prescriptionPage.save();
+
+    res.status(201).json({ message: "Prescription Posted Successfully" });
+  } catch (error) {
+    console.log(error);
+  }
+});
+
 
 module.exports = router;
