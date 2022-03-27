@@ -22,9 +22,9 @@ router.get("/", (req, res) => {
 // PATIENT REGISTRATION
 router.post("/register", async (req, res) => {
   // console.log(req.body);
-  const { name, email, password, cpassword } = req.body;
+  const { name, aadhar, age, email, password, cpassword } = req.body;
 
-  if (!name || !email || !password || !cpassword) {
+  if (!name || !aadhar || !age || !email || !password || !cpassword) {
     return res.status(422).json({ error: "Plz filled the field properly" });
   }
 
@@ -33,8 +33,11 @@ router.post("/register", async (req, res) => {
     if (emailExist) {
       return res.status(422).json({ error: "Email already Exist" });
     }
+    if(age < 18){
+      return res.status(422).json({ error: "Age is less than 18" });
+    }
 
-    const patient = new Patient({ name, email, password, cpassword });
+    const patient = new Patient({ name, aadhar, age,  email, password, cpassword });
 
     await patient.save();
 
@@ -88,6 +91,8 @@ router.post("/doctorRegister", async (req, res) => {
   const {
     user,
     name,
+    aadhar,
+    age,
     email,
     designation,
     experience,
@@ -100,6 +105,8 @@ router.post("/doctorRegister", async (req, res) => {
 
   if (
     !name ||
+    !aadhar ||
+    !age ||
     !email ||
     !designation ||
     !experience ||
@@ -120,10 +127,15 @@ router.post("/doctorRegister", async (req, res) => {
     if (phoneExist) {
       return res.status(422).json({ error: "Phone already Exist" });
     }
+    if(age < 18){
+      return res.status(422).json({ error: "Age is less than 18" });
+    }
 
     const doctor = new Doctor({
       user,
       name,
+      aadhar,
+      age,
       email,
       designation,
       experience,
