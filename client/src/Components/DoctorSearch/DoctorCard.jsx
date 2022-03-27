@@ -209,7 +209,7 @@ const DoctorCard = ({ search }) => {
                   <div className="search-wrapper m-3 mb-5">
                 <div className="left-container">
                   <div className="doc-image">
-                    <img src={harshpatel} alt="" />
+                    <img src={item.image} alt="" />
                   </div>
                   <div className="details px-5 my-auto pt-2">
                     <h4 className="doctor-name">{item.name}</h4>

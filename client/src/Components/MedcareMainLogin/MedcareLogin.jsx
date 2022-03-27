@@ -37,7 +37,7 @@ const MedcareLogin = () => {
                                             <h4 className='text-center p-2'>Doctor Login</h4>
                                             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa accusamus nobis repellat esse cupiditate, blanditiis suscipit id. Officia dolorem autem libero ipsum quo similique fuga.</p>
                                         </div>
-                                        <NavLink to="/login" className="btn btn-primary d-flex justify-content-center">Doctor Login</NavLink>
+                                        <NavLink to="/doctor/login" className="btn btn-primary d-flex justify-content-center">Doctor Login</NavLink>
                                     </div>
 
                                     <div className="login-card" style={{ width: "340px", margin: "5px", border: "solid 1px rgba(33, 132, 187, 1)", padding: "30px 15px", borderRadius: "10px" }}>
@@ -48,7 +48,7 @@ const MedcareLogin = () => {
                                             <h4 className='text-center p-2'>Admin Login</h4>
                                             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa accusamus nobis repellat esse cupiditate, blanditiis suscipit id. Officia dolorem autem libero ipsum quo similique fuga.</p>
                                         </div>
-                                        <NavLink to="/login" className="btn btn-primary d-flex justify-content-center">Admin Login</NavLink>
+                                        <NavLink to="/admin/login" className="btn btn-primary d-flex justify-content-center">Admin Login</NavLink>
                                     </div>
                                 </div>
                                 <div className="text-center mt-4">

@@ -105,6 +105,7 @@ router.post("/doctorRegister", async (req, res) => {
     experience,
     phone,
     location,
+    image,
     password,
     approved,
     numReviews,
@@ -119,6 +120,7 @@ router.post("/doctorRegister", async (req, res) => {
     !experience ||
     !phone ||
     !location ||
+    !image ||
     !password
   ) {
     return res.status(422).json({ error: "Plz filled the field properly" });
@@ -148,6 +150,7 @@ router.post("/doctorRegister", async (req, res) => {
       experience,
       phone,
       location,
+      image,
       password,
       approved,
       numReviews,

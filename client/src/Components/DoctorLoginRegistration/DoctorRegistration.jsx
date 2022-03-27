@@ -9,7 +9,7 @@ const DoctorRegistration = () => {
 
     const history = useHistory();
     const [doctor, setDoctor] = useState({
-        name: "", aadhar:"", age:"", email: "", designation: "", experience: "", phone: "", location: "", password: "", approved: 0, numReviews: 0,
+        name: "", aadhar: "", age: "", email: "", designation: "", experience: "", phone: "", location: "", image:"", password: "", approved: 0, numReviews: 0,
     });
 
     let name, value;
@@ -33,7 +33,7 @@ const DoctorRegistration = () => {
     const PostData = async (e) => {
         e.preventDefault();
 
-        const { name, aadhar, age, email, designation, experience, phone, location, password, approved, numReviews } = doctor;
+        const { name, aadhar, age, email, designation, experience, phone, location, image, password, approved, numReviews } = doctor;
 
         const res = await fetch('/doctorRegister', {
             method: "POST",
@@ -41,7 +41,7 @@ const DoctorRegistration = () => {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                name, aadhar, age, email, designation, experience, phone, location, password, approved, numReviews
+                name, aadhar, age, email, designation, experience, phone, location, image, password, approved, numReviews
             })
         });
 
@@ -118,6 +118,10 @@ const DoctorRegistration = () => {
                                             <div class="mb-3">
                                                 <label for="" class="form-label">Location</label>
                                                 <input type="text" class="form-control" name="location" id="location" value={doctor.location} onChange={handleInputs} placeholder="Example: Bandra, Mumbai" />
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="" class="form-label">Image URL</label>
+                                                <input type="text" class="form-control" name="image" id="image" value={doctor.image} onChange={handleInputs} placeholder="https://www.linktoimg.com/abc.png" />
                                             </div>
                                             <div class="mb-3">
                                                 <label for="" class="form-label">Password</label>
