@@ -164,24 +164,28 @@ const Navbar = () => {
                             <li className="nav-item">
                                 <a className="nav-link" href="https://medcare-bloodbankstats.netlify.app/">Blood Bank</a>
                             </li>
-                            <li className="nav-item">
+                            {/* <li className="nav-item">
                                 <a className="nav-link" href="/patient/dashboard/">Patient Dashboard</a>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link" href="/doctor/dashboard/">Doctor Dashboard</a>
-                            </li>
+                            </li> */}
                             {/* <li className="nav-item">
                                 <NavLink className="nav-link" to="/news">News(Beta)</NavLink>
                             </li> */}
-                            {/* <li className="nav-item dropdown mx-2">
+                            <li className="nav-item dropdown mx-2">
                                 <a className="nav-link dropdown-toggle p-2" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Appointment
+                                    Dashboard
                                 </a>
                                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a className="dropdown-item" href="/appointment/patient">Patient Appointment</a></li>
-                                    <li><a className="dropdown-item" href="/appointment/doctor"> Doctor Appointment</a></li>
+                                    <li className="nav-item">
+                                        <a className="nav-link" href="/patient/dashboard/">Patient Dashboard</a>
+                                    </li>
+                                    <li className="nav-item">
+                                        <a className="nav-link" href="/doctor/dashboard/">Doctor Dashboard</a>
+                                    </li>
                                 </ul>
-                            </li> */}
+                            </li>
                         </ul>
                         <RenderMenu />
                     </div>
