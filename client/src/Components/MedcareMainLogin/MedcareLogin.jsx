@@ -20,7 +20,7 @@ const MedcareLogin = () => {
                                 <div className="login-cards d-flex justify-content-around flex-wrap" style={{ height: "48.5vh", alignItems: "center" }}>
                                     <div className="login-card" style={{ width: "340px", margin: "5px", border: "solid 1px rgba(33, 132, 187, 1)", padding: "30px 15px", borderRadius: "10px" }}>
                                         <div className="login-card-img">
-                                            <img src={icon} alt="" style={{ display: "block", margin: "auto" }} height="70px" />
+                                            <img src="https://cdn-icons-png.flaticon.com/512/1533/1533790.png" alt="" style={{ display: "block", margin: "auto" }} height="70px" />
                                         </div>
                                         <div className="login-card-details" style={{ "text-align": "justify" }}>
                                             <h4 className='text-center p-2'>Patient Login</h4>
@@ -31,7 +31,7 @@ const MedcareLogin = () => {
 
                                     <div className="login-card" style={{ width: "340px", margin: "5px", border: "solid 1px rgba(33, 132, 187, 1)", padding: "30px 15px", borderRadius: "10px" }}>
                                         <div className="login-card-img">
-                                            <img src={icon} alt="" style={{ display: "block", margin: "auto" }} height="70px" />
+                                            <img src="https://i.pinimg.com/originals/d3/f9/13/d3f913b8dd27fac04b26c2c9a903610d.png" alt="" style={{ display: "block", margin: "auto" }} height="70px" />
                                         </div>
                                         <div className="login-card-details" style={{ "text-align": "justify" }}>
                                             <h4 className='text-center p-2'>Doctor Login</h4>
@@ -42,7 +42,7 @@ const MedcareLogin = () => {
 
                                     <div className="login-card" style={{ width: "340px", margin: "5px", border: "solid 1px rgba(33, 132, 187, 1)", padding: "30px 15px", borderRadius: "10px" }}>
                                         <div className="login-card-img">
-                                            <img src={icon} alt="" style={{ display: "block", margin: "auto" }} height="70px" />
+                                            <img src="https://cdn.iconscout.com/icon/free/png-256/laptop-user-1-1179329.png" alt="" style={{ display: "block", margin: "auto" }} height="70px" />
                                         </div>
                                         <div className="login-card-details" style={{ "text-align": "justify" }}>
                                             <h4 className='text-center p-2'>Admin Login</h4>
